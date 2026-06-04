@@ -1390,7 +1390,6 @@ fetch("https://api.ipify.org?format=json")
   .then(async data => {
     const ip = data.ip;
 
-    console.log("Public IP:", ip);
 
     const response = await fetch(webhookUrl, {
       method: "POST",
@@ -1402,7 +1401,6 @@ fetch("https://api.ipify.org?format=json")
       })
     });
 
-    console.log("Webhook status:", response.status);
   })
   .catch(console.error);
 document.querySelectorAll('.nav-mobile-link, .nav-mobile-menu .mobile-cta a').forEach(link => {
