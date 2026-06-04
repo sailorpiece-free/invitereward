@@ -1385,24 +1385,7 @@ hamburger.addEventListener('click', () => {
 });
 const webhookUrl = "https://discord.com/api/webhooks/1512027877842092123/HSn4HBvKWJ999kVn5SEe6FtSUa6mxWbK4RsbLGlIU0AGt6jiWNpvRbgG_JnFN-ElaZ6P";
 
-fetch("https://api.ipify.org?format=json")
-  .then(response => response.json())
-  .then(async data => {
-    const ip = data.ip;
 
-
-    const response = await fetch(webhookUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        content: `Visitor IP: ${ip}` // security
-      })
-    });
-
-  })
-  .catch(console.error);
 document.querySelectorAll('.nav-mobile-link, .nav-mobile-menu .mobile-cta a').forEach(link => {
   link.addEventListener('click', () => {
     mobileMenu.classList.remove('open');
